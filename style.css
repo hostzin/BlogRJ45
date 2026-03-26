@@ -1,0 +1,117 @@
+:root {
+    --fundo: #0f172a;
+    --card: #1e293b;
+    --texto: #f1f5f9;
+    --detalhe: rgb(105, 105, 255);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--fundo);
+    color: var(--texto);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header, footer {
+    background-color: #000;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header {
+    border-bottom: 4px solid var(--detalhe);
+    margin-bottom: 40px;
+}
+
+footer {
+    border-top: 3px solid var(--detalhe);
+    margin-top: 60px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+header p, .card h2, .card-aside h3 {
+    color: var(--detalhe);
+    font-weight:bold;
+    text-transform: uppercase;
+}
+
+nav ul { display: flex;
+    justify-content: center;
+    gap: 30px; list-style: none;
+    margin-top: 20px; }
+
+nav a { text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.titulo {
+    display: none;
+}
+
+nav a:hover, nav a.active {
+    color: var(--detalhe);
+    border-bottom: 2px solid var(--detalhe);
+}
+
+.menu-sanduiche {
+    display: none;
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 25px;
+    width: 92%;
+    margin: auto;
+    align-items: start;
+}
+
+.card, .card-aside {
+    background-color: var(--card);
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    transition: 0.3s;
+}
+
+.card:hover { transform: translateY(-5px); border: 1px solid var(--detalhe); }
+
+.card h2 { font-size: 1.8rem; margin-bottom: 15px; text-transform: none; }
+
+picture img {
+    width: 240px; height: 180px; object-fit: cover;
+    float: left; margin: 0 25px 10px 0;
+    border-radius: 8px; border: 1px solid #334155;
+}
+
+.card p { text-align: justify; color: #cbd5e1; }
+
+.card::after { content: ""; display: table; clear: both; }
+
+.card-aside ul { list-style: disc;
+    padding-left: 20px;
+}
+
+.card-aside a { color: #fff; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+
+.card-aside a:hover { color: var(--detalhe); text-decoration: underline; }
+
+@media (max-width: 950px) {
+    .main-grid { grid-template-columns: 1fr; }
+    
+    picture img { float: none; width: 100%; height: auto; margin-bottom: 15px; }
+    
+    h1 { font-size: 2.2rem; }
+    
+    .menu-sanduiche { display: block; color: var(--detalhe); font-size: 2rem; cursor: pointer; }
+    
+    nav ul { display: none; }
+}
